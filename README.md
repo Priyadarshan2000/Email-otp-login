@@ -1,2 +1,2 @@
-# encrypted message generator android
+encrypted message generator android
 
