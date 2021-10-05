@@ -1,5 +1,7 @@
 package Main;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -96,5 +98,11 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public void openurl(View view) {
+        Uri uri = Uri.parse("https://docs.google.com/document/d/1RE0aRMSDO0Xt6ucjseuUgczwze1MnEsytIhV8oX0N8U/edit?usp=sharing");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 }
