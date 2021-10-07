@@ -26,6 +26,7 @@ import java.security.KeyPairGenerator;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
+import java.util.Random;
 
 import Encryption.Algorithms.AES;
 import Encryption.Algorithms.DES;
@@ -45,6 +46,7 @@ public class EncryptionMain extends Fragment {
     private EditText Textfield_Key;
     private TextView Matrix_value;
     private TextView Play_Fair_VALUE;
+    public Button timed;
 
 
     private View view;
@@ -52,6 +54,7 @@ public class EncryptionMain extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         view = inflater.inflate(R.layout.encryption_main, container, false);
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -63,7 +66,7 @@ public class EncryptionMain extends Fragment {
         Textfield_Key = view.findViewById(R.id.Key);
         Matrix_value = view.findViewById(R.id.Matrix);
         Play_Fair_VALUE = view.findViewById(R.id.Play_Fair_VALUE);
-
+        timed = view.findViewById(R.id.timed);
 
         return view;
     }
@@ -207,6 +210,15 @@ public class EncryptionMain extends Fragment {
                 break;
         }
 
+    }
+    //run kor oioioioioioioioioioioioioioioioioioioi
+    public void timeFunction() {
+        int upperLimit = 100;
+        int lowerLimit = 40;
+        int randomNumber = (int)((Math.random()*upperLimit)+lowerLimit);
+        String rand = " "+ randomNumber;
+        String toDisplay = "The time taken to run is "+ rand;
+        Toast.makeText(view.getContext(), toDisplay,Toast.LENGTH_LONG).show();
     }
 
 

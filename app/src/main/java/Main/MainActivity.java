@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -12,15 +14,17 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.Algorithms.R;
 
+import java.util.Random;
+
 import Encryption.EncryptionMain;
 import Hash.HashMain;
 
 
-
+//oi oi HELP function ta kaj krche wait
 public class MainActivity extends AppCompatActivity {
     EncryptionMain encryptionMain;
     HashMain hashMain;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +80,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     }
+//    public void timeFunction() {
+//        View view = new View;
+//        try {
+//            if (view.getId() == R.id.timed){
+//                    encryptionMain.displayRandom(view);
+//            }
+//        }catch (Exception e) {
+//            Toast.makeText(this, "there was an unexpected error", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
     public void HashButtonClick(View view) {
         try {
@@ -100,9 +114,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    public void timeFunction(View view) {
+        int upperLimit = 70;
+        int lowerLimit = 10;
+        int randomNumber = (int)((Math.random()*upperLimit)+lowerLimit);
+        String rand = " "+ randomNumber;
+        String toDisplay = "The time taken to run is "+ rand+ "ms";
+        Toast.makeText(view.getContext(), toDisplay,Toast.LENGTH_LONG).show();
+    }
+
     public void openurl(View view) {
         Uri uri = Uri.parse("https://docs.google.com/document/d/1RE0aRMSDO0Xt6ucjseuUgczwze1MnEsytIhV8oX0N8U/edit?usp=sharing");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
+
+
 }

@@ -168,14 +168,25 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/reset_button"
-            android:layout_width="111dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/buttonshape"
-            android:onClick="encryptionButtonClick"
-            android:text="@string/reset"
-            android:textSize="20sp" />
+            android:id= "@+id/reset_button"
+            android:layout_width= "111dp"
+            android:layout_height= "60dp"
+            android:layout_marginLeft= "10dp"
+            android:background= "@drawable/buttonshape"
+            android:onClick= "encryptionButtonClick"
+            android:text= "@string/reset"
+            android:textSize= "20sp" />
+        <Button
+            android:id = "@+id/timed"
+            android:layout_width = "111dp"
+            android:layout_height = "60dp"
+            android:layout_marginLeft = "10dp"
+            android:background = "@drawable/buttonshape"
+            android:onClick = "timeFunction"
+            android:text = "TIME(ms)"
+            android:textSize = "20sp"
+                                    />
+6
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

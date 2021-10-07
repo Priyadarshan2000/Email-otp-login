@@ -25,6 +25,7 @@ import Encryption.Algorithms.Caesarcipher;
 
 import java.nio.charset.StandardCharsets;
 import java.security.*;
+import java.util.Random;
 
 public class Old_MainActivity extends AppCompatActivity {
     private String message;
